@@ -1,0 +1,91 @@
+export type Cat = {
+  id: string;
+  name: string;
+  breed?: string;
+  age?: number;
+  bio?: string;
+  image?: string; 
+};
+
+export const cats: Cat[] = [
+  {
+    id: "1",
+    name: "Mittens",
+    breed: "Domestic Short Hair",
+    age: 2,
+    bio: "Loves naps and warm keyboards.",
+    image: "https://placehold.co/300x300?text=Cat+1",
+  },
+  {
+    id: "2",
+    name: "Luna",
+    breed: "Siamese",
+    age: 3,
+    bio: "Chatty and curious.",
+    image: "https://placehold.co/300x300?text=Cat+2",
+  },
+  {
+    id: "3",
+    name: "Oscar",
+    breed: "Maine Coon",
+    age: 4,
+    bio: "Huge paws, gentle heart.",
+    image: "https://placehold.co/300x300?text=Cat+3",
+  },
+  {
+    id: "4",
+    name: "Cleo",
+    breed: "Bengal",
+    age: 1,
+    bio: "Active and loves climbing.",
+    image: "https://placehold.co/300x300?text=Cat+4",
+  },
+  {
+    id: "5",
+    name: "Bella",
+    breed: "Persian",
+    age: 5,
+    bio: "Regal and photogenic.",
+    image: "https://placehold.co/300x300?text=Cat+5",
+  },
+  {
+    id: "6",
+    name: "Simba",
+    breed: "Abyssinian",
+    age: 2,
+    bio: "Explorer of boxes.",
+    image: "https://placehold.co/300x300?text=Cat+6",
+  },
+  {
+    id: "7",
+    name: "Nala",
+    breed: "Ragdoll",
+    age: 3,
+    bio: "Flops on the lap instantly.",
+    image: "https://placehold.co/300x300?text=Cat+7",
+  },
+  {
+    id: "8",
+    name: "Jasper",
+    breed: "British Shorthair",
+    age: 4,
+    bio: "Calm and dignified.",
+    image: "https://placehold.co/300x300?text=Cat+8",
+  },
+  {
+    id: "9",
+    name: "Mochi",
+    breed: "Scottish Fold",
+    age: 1,
+    bio: "Tiny meows, big personality.",
+    image: "https://placehold.co/300x300?text=Cat+9",
+  },
+  {
+    id: "10",
+    name: "Pepper",
+    breed: "Turkish Van",
+    age: 6,
+    bio: "Water-friendly and playful.",
+    image: "https://placehold.co/300x300?text=Cat+10",
+  },
+];
