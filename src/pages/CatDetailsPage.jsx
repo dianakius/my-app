@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { cats } from "../data/Cats";
 
 export default function CatDetailsPage() {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const cat = cats.find((c) => c.id === id);
 
   if (!cat) {

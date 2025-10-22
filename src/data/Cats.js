@@ -1,13 +1,4 @@
-export type Cat = {
-  id: string;
-  name: string;
-  breed?: string;
-  age?: number;
-  bio?: string;
-  image?: string; 
-};
-
-export const cats: Cat[] = [
+export const cats = [
   {
     id: "1",
     name: "Mittens",
