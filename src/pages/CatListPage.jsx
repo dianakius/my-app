@@ -5,13 +5,15 @@ const API_URL = import.meta.env.VITE_CAT_API_URL;
 
 export default function CatListPage() {
   const [cats, setCats] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [limit, setLimit] = useState(10);
 
   useEffect(() => {
     const fetchCats = async () => {
       try {
+        setLoading(true);
+
         const response = await fetch(`${API_URL}?limit=${limit}`); // Wait for the download
 
         if (!response.ok) throw new Error("Failed to fetch cats");
