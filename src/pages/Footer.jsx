@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faYoutube, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+  faTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-gray-400 text-black">
       {/* Newsletter Section */}
@@ -11,7 +17,9 @@ function Footer() {
           <h2 className="text-2xl font-bold mb-2">
             Join the Cat World newsletter to receive our best updates!
           </h2>
-          <p className="text-black-400 mb-6">You can unsubscribe at any time.</p>
+          <p className="text-black-400 mb-6">
+            You can unsubscribe at any time.
+          </p>
           <form className="flex flex-col sm:flex-row justify-center items-center gap-3 max-w-md mx-auto">
             <input
               type="email"
@@ -174,7 +182,7 @@ function Footer() {
               >
                 <FontAwesomeIcon icon={faFacebookF} />
               </a>
-              
+
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -183,7 +191,7 @@ function Footer() {
               >
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
-              
+
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -192,7 +200,7 @@ function Footer() {
               >
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
-              
+
               <a
                 href="https://twitter.com"
                 target="_blank"
@@ -201,7 +209,7 @@ function Footer() {
               >
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
-              
+
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -217,5 +225,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;
