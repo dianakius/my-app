@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function Navbar() {
+export default function Navbar() {
   return (
     <nav className="flex justify-center gap-6 p-4 bg-white shadow">
       <Link to="/" className="hover:underline">
@@ -11,5 +11,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;
