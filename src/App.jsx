@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CatListPage from "./pages/CatListPage";
 import CatDetailsPage from "./pages/CatDetailsPage";
-import Footer from "./pages/Footer";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
