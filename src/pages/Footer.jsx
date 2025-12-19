@@ -11,7 +11,6 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-gray-400 text-black">
-      {/* Newsletter Section */}
       <div className="border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-12 text-center">
           <h2 className="text-2xl font-bold mb-2">
@@ -31,10 +30,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Links Section */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {/* About Us */}
           <div>
             <h3 className="text-lg font-bold mb-4">About Us</h3>
             <ul className="space-y-2">
@@ -57,7 +54,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Us */}
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <ul className="space-y-2">
@@ -80,7 +76,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-lg font-bold mb-4">Services</h3>
             <ul className="space-y-2">
@@ -111,7 +106,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social Media */}
           <div>
             <h3 className="text-lg font-bold mb-4">Social Media</h3>
             <ul className="space-y-2">
@@ -160,11 +154,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Section */}
       <div className="border-t border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Logo */}
             <Link
               to="/"
               className="flex items-center space-x-2 text-2xl font-bold hover:text-black-300 transition-colors"
@@ -172,7 +164,6 @@ export default function Footer() {
               <span>CAT WORLD 🐱</span>
             </Link>
 
-            {/* Social Icons */}
             <div className="flex space-x-4">
               <a
                 href="https://facebook.com"
