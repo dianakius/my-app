@@ -2,7 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CatListPage from "./pages/CatListPage";
 import CatDetailsPage from "./pages/CatDetailsPage";
-import Navbar from "./pages/Navbar";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
