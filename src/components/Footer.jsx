@@ -59,7 +59,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/"
+                  to="/contact"
                   className="text-black-400 hover:text-white transition-colors"
                 >
                   Contact
