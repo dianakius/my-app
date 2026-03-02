@@ -79,7 +79,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Write your Message here </label>
           <textarea
             name="message"
             value={form.message}
