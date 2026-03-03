@@ -1,13 +1,12 @@
 export default function HomePage() {
-
   const cards = [
     {
-      img: "/public/PepperBell.png",  
+      img: "/public/PepperBell.png",
       title: "Beautiful Cats",
       description: "Discover the most adorable cats from around the world.",
     },
     {
-      img: "/public/PepperBell.png",  
+      img: "/public/TabbyTongue.png",
       title: "Explore Breeds",
       description: "Browse hundreds of unique cat breeds and their traits.",
     },
@@ -18,7 +17,6 @@ export default function HomePage() {
     },
   ];
 
-  
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold text-center">
@@ -46,4 +44,3 @@ export default function HomePage() {
     </div>
   );
 }
- 
