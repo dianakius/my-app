@@ -29,12 +29,12 @@ export default function HomePage() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow hover:shadow-lg transition-shadow overflow-hidden"
+            className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group"
           >
             <img
               src={card.img}
               alt={card.title}
-              className={`w-full h-48 object-cover ${card.position || "object-center"}`}
+              className={`w-full h-48 object-cover ${card.position || "object-center"} group-hover:scale-110 transition-transform duration-500`}
               
             />
             <div className="p-4">
