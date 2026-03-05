@@ -24,7 +24,7 @@ export default function Footer() {
               type="email"
               name="email"
               placeholder="Your Email"
-              className="w-full sm:flex-1 px-4 py-3 rounded border border-gray-600 bg-transparent text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full sm:flex-1 px-4 py-3 rounded border border-gray-600 bg-transparent text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-white"
             />
           </form>
         </div>
