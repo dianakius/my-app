@@ -44,6 +44,43 @@ export default function HomePage() {
           </div>
         ))}
       </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group"
+          >
+            <img
+              src={card.img}
+              alt={card.title}
+              className={`w-full h-48 object-cover ${card.position || "object-center"} group-hover:scale-110 transition-transform duration-500`}
+              
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
+              <p className="text-gray-600 text-sm">{card.description}</p>
+            </div>
+          </div>
+        ))}
+      </div><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group"
+          >
+            <img
+              src={card.img}
+              alt={card.title}
+              className={`w-full h-48 object-cover ${card.position || "object-center"} group-hover:scale-110 transition-transform duration-500`}
+              
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
+              <p className="text-gray-600 text-sm">{card.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
