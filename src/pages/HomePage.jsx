@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 export default function HomePage() {
   const cards = [
     {
-      img: "/public/PepperBell.png",
+      img: "/PepperBell.png",
       title: "Beautiful Cats",
       description: "Discover the most adorable cats from around the world.",
     },
     {
-      img: "/public/TabbyTongue.png",
+      img: "/TabbyTongue.png",
       title: "Explore Breeds",
       description: "Browse hundreds of unique cat breeds and their traits.",
   
     },
     {
-      img: "/public/Grey.png",
+      img: "/Grey.png",
       title: "Find Your Favorite",
       description: "Save and revisit the cats that steal your heart.",
       position: "object-[50%_20%]",
