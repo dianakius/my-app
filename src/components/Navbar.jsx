@@ -5,9 +5,7 @@ export default function Navbar() {
       <Link to="/" className="hover:underline text-red-700 ">
         Home
       </Link>
-      <Link to="/cats" className="hover:underline text-blue-700">
-        Cats
-      </Link>
+      
     </nav>
   );
 }
