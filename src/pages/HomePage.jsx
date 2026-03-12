@@ -21,9 +21,21 @@ export default function HomePage() {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold text-center p-4">
-        Welcome to the Cat World
-      </h1>
+      <section className="text-center py-16">
+        <h1 className="text-5xl font-bold mb-4">
+          Discover the World of Cats 🐾
+        </h1>
+
+        <p className="text-gray-600 max-w-xl mx-auto mb-6">
+          Browse adorable cats, explore different breeds, and save your favorites.
+        </p>
+
+        <Link
+        to="/cats"
+        className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition">
+          Explore Cats
+        </Link>
+      </section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card, index) => (
