@@ -1,29 +1,26 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCats, setLoading, setError } from "../store/catsSlice";
 
 const API_URL = import.meta.env.VITE_CAT_API_URL;
 
 export default function CatListPage() {
-  const [cats, setCats] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const { items: cats, loading, error } = useSelector((state) => state.cats);
   const [limit, setLimit] = useState(10);
-
   useEffect(() => {
     const fetchCats = async () => {
       try {
-        setLoading(true);
-
-        const response = await fetch(`${API_URL}?limit=${limit}`); // Wait for the download
-
+        dispatch(setLoading(true));
+        const response = await fetch(`${API_URL}?limit=${limit}`);
         if (!response.ok) throw new Error("Failed to fetch cats");
-        const data = await response.json(); //Wait for JSON conversion
-
-        setCats(data);
+        const data = await response.json();
+        dispatch(setCats(data));
       } catch (err) {
-        setError(err.message);
+        dispatch(setError(err.message));
       } finally {
-        setLoading(false);
+        dispatch(setLoading(false));
       }
     };
     fetchCats();
