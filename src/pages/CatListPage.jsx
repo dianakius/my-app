@@ -10,21 +10,31 @@ export default function CatListPage() {
   const { items: cats, loading, error } = useSelector((state) => state.cats);
   const [limit, setLimit] = useState(10);
   useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
     const fetchCats = async () => {
       try {
         dispatch(setLoading(true));
-        const response = await fetch(`${API_URL}?limit=${limit}`);
+        const response = await fetch(`${API_URL}?limit=${limit}`, { signal });
         if (!response.ok) throw new Error("Failed to fetch cats");
         const data = await response.json();
         dispatch(setCats(data));
       } catch (err) {
-        dispatch(setError(err.message));
+        if (err.name !== "AbortError") {
+          dispatch(setError(err.message));
+        }
       } finally {
-        dispatch(setLoading(false));
+        if (!signal.aborted) {
+          dispatch(setLoading(false));
+        }
       }
     };
     fetchCats();
-  }, [limit]);
+
+    return () => {
+      controller.abort();
+    };
+  }, [limit, dispatch]);
 
   if (loading) return <div className="p-6">Loading cats...</div>;
 
