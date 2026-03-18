@@ -5,7 +5,8 @@ import CatDetailsPage from "./pages/CatDetailsPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";
-import Contact from "./pages/Contact"
+import Contact from "./pages/Contact";
+import Adoption from "./pages/Adoption";
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
       <main className="grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/adoption" element={<Adoption />} />
           <Route path="/cats" element={<CatListPage />} />
           <Route path="/cats/:id" element={<CatDetailsPage />} />
           <Route path="/contact" element={<Contact />} />
+          
         </Routes>
       </main>
       <Footer />

@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/adoption"
                   className="text-black-400 hover:text-white transition-colors"
                 >
                   Adopt a Cat
