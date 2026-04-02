@@ -33,10 +33,7 @@ export default function HomePage() {
           favorites.
         </p>
 
-        <Link
-          to="/cats"
-          className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition"
-        >
+        <Link to="/cats" className="text-black hover:bg-blue-800 transition">
           Explore Cats
         </Link>
       </section>
