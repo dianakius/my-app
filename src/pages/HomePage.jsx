@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { Card } from "@chakra-ui/react"
+import { Box, Image, Heading, Text } from "@chakra-ui/react";
 
 export default function HomePage() {
   const cards = [
@@ -13,7 +12,6 @@ export default function HomePage() {
       img: "/TabbyTongue.png",
       title: "Explore Breeds",
       description: "Browse hundreds of unique cat breeds and their traits.",
-  
     },
     {
       img: "/Grey.png",
@@ -31,70 +29,44 @@ export default function HomePage() {
         </h1>
 
         <p className="text-gray-600 max-w-xl mx-auto mb-6">
-          Browse adorable cats, explore different breeds, and save your favorites.
+          Browse adorable cats, explore different breeds, and save your
+          favorites.
         </p>
 
         <Link
-        to="/cats"
-        className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition">
+          to="/cats"
+          className="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition"
+        >
           Explore Cats
         </Link>
       </section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card, index) => (
-          <div
+          <Box
             key={index}
-            className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group"
+            maxW="sm"
+            borderRadius="2xl"
+            overflow="hidden"
+            shadow="md"
+            _hover={{ shadow: "xl", transform: "scale(1.03)" }}
+            transition="all 0.3s"
           >
-            <img
+            <Image
               src={card.img}
               alt={card.title}
-              className={`w-full h-48 object-cover ${card.position || "object-center"} group-hover:scale-110 transition-transform duration-500`}
-              
+              height="200px"
+              objectFit="cover"
             />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-gray-600 text-sm">{card.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group"
-          >
-            <img
-              src={card.img}
-              alt={card.title}
-              className={`w-full h-48 object-cover ${card.position || "object-center"} group-hover:scale-110 transition-transform duration-500`}
-              
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-gray-600 text-sm">{card.description}</p>
-            </div>
-          </div>
-        ))}
-      </div><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 overflow-hidden group"
-          >
-            <img
-              src={card.img}
-              alt={card.title}
-              className={`w-full h-48 object-cover ${card.position || "object-center"} group-hover:scale-110 transition-transform duration-500`}
-              
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-gray-600 text-sm">{card.description}</p>
-            </div>
-          </div>
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                {card.title}
+              </Heading>
+              <Text color="gray.600" fontSize="sm">
+                {card.description}
+              </Text>
+            </Box>
+          </Box>
         ))}
       </div>
     </div>
