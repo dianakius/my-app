@@ -7,23 +7,25 @@ import Footer from "./components/Footer";
 import "./App.css";
 import Contact from "./pages/Contact";
 import Adoption from "./pages/Adoption";
+import { Provider } from "@/components/ui/provider";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="grow">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/adoption" element={<Adoption />} />
-          <Route path="/cats" element={<CatListPage />} />
-          <Route path="/cats/:id" element={<CatDetailsPage />} />
-          <Route path="/contact" element={<Contact />} />
-          
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <Provider>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/adoption" element={<Adoption />} />
+            <Route path="/cats" element={<CatListPage />} />
+            <Route path="/cats/:id" element={<CatDetailsPage />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
