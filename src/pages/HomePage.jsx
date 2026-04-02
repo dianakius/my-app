@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { Card } from "@chakra-ui/react"
 
 export default function HomePage() {
   const cards = [
