@@ -8,6 +8,7 @@ import "./App.css";
 import Contact from "./pages/Contact";
 import Adoption from "./pages/Adoption";
 import { Provider } from "@/components/ui/provider";
+import BreedsPage from "./pages/BreedsPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/cats" element={<CatListPage />} />
             <Route path="/cats/:id" element={<CatDetailsPage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/breeds" element={<BreedsPage />} />
           </Routes>
         </main>
         <Footer />
