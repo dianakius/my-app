@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const cards = [
   {
@@ -24,6 +24,7 @@ const cards = [
 ];
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <div
       style={{
