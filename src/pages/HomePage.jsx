@@ -12,6 +12,7 @@ const cards = [
     title: "Explore Breeds",
     description: "Browse hundreds of unique cat breeds and their traits.",
     tag: "Breeds",
+    to:"/breeds",
   },
   {
     img: "/Grey.png",
@@ -158,6 +159,7 @@ export default function HomePage() {
         {cards.map((card, i) => (
           <div
             key={i}
+            onClick={() => { if (card.to) navigate(card.to); }}
             style={{
               borderRadius: "20px",
               overflow: "hidden",
