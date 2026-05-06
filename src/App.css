@@ -1,4 +1,18 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+
+@theme {
+  --color-cream: #fdf8f2;
+  --color-brown: #3d2b1f;
+  --color-terracotta: #c97d4e;
+  --color-brown-light: #f0d9c8;
+  --color-brown-mid: #7a5c4a;
+  --color-brown-border: #e8d8cc;
+
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
 
 :root {
   --cream: #fdf8f2;
