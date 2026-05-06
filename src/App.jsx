@@ -18,7 +18,7 @@ function App() {
         <main className="grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/adoption" element={<Adoption />S} />
+            <Route path="/adoption" element={<Adoption />}
             <Route path="/cats" element={<CatListPage />} />
             <Route path="/cats/:id" element={<CatDetailsPage />} />
             <Route path="/contact" element={<Contact />} />
