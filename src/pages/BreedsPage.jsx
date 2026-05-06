@@ -17,67 +17,79 @@ export default function BreedsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'DM Sans', sans-serif", background: "#fdf8f2" }}>
-        <p style={{ color: "#7a5c4a", fontSize: "1rem" }}>Loading breeds...</p>
+      <div className="min-h-[60vh] flex items-center justify-center bg-cream font-sans">
+        <p className="text-brown-mid text-base">Loading breeds...</p>
       </div>
     );
   }
 
   return (
-    <div style={{ background: "#fdf8f2", minHeight: "100%", padding: "5rem 1.5rem", fontFamily: "'DM Sans', sans-serif" }}>
-
-      {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-        <p style={{ fontSize: "0.7rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#c97d4e", marginBottom: "0.75rem", fontWeight: 500 }}>
+    <div className="bg-cream min-h-full py-20 px-6 font-sans">
+      <div className="text-center mb-14">
+        <p className="text-[0.7rem] tracking-[0.18em] uppercase text-terracotta mb-3 font-medium">
           Discover your perfect match
         </p>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(2.2rem, 5vw, 3.5rem)", fontWeight: 700, color: "#3d2b1f", lineHeight: 1.1, margin: 0 }}>
-          Cat <em style={{ fontStyle: "italic", color: "#c97d4e" }}>Breeds</em>
+        <h1
+          className="font-serif font-bold text-brown leading-tight m-0"
+          style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)" }}
+        >
+          Cat <em className="italic text-terracotta">Breeds</em>
         </h1>
       </div>
 
-      {/* Grid */}
-      <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1.75rem" }}>
+      <div
+        className="max-w-[1100px] mx-auto grid gap-7"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))" }}
+      >
         {breeds.map((breed) => (
           <div
             key={breed.id}
             onClick={() => navigate(`/breeds/${breed.id}`)}
-            style={{ borderRadius: "20px", overflow: "hidden", background: "#fff", boxShadow: "0 8px 32px rgba(61,43,31,0.10)", cursor: "pointer", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
-            onMouseEnter={function(e) {
+            className="rounded-[20px] overflow-hidden bg-white cursor-pointer transition-all duration-300"
+            style={{ boxShadow: "0 8px 32px rgba(61,43,31,0.10)" }}
+            onMouseEnter={function (e) {
               e.currentTarget.style.transform = "translateY(-6px)";
-              e.currentTarget.style.boxShadow = "0 20px 48px rgba(61,43,31,0.18)";
+              e.currentTarget.style.boxShadow =
+                "0 20px 48px rgba(61,43,31,0.18)";
             }}
-            onMouseLeave={function(e) {
+            onMouseLeave={function (e) {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 8px 32px rgba(61,43,31,0.10)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 32px rgba(61,43,31,0.10)";
             }}
           >
-            {/* Image */}
-            <div style={{ position: "relative", height: "200px", background: "#f0e6de" }}>
+            <div className="relative h-[200px] bg-brown-light">
               {breed.image?.url ? (
                 <img
                   src={breed.image.url}
                   alt={breed.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  className="w-full h-full object-cover block"
                 />
               ) : (
-                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>🐱</div>
+                <div className="w-full h-full flex items-center justify-center text-5xl">
+                  🐱
+                </div>
               )}
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(61,43,31,0.45) 100%)" }} />
-              <span style={{ position: "absolute", top: "14px", left: "14px", background: "#fdf8f2", color: "#c97d4e", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", padding: "4px 12px", borderRadius: "999px" }}>
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, transparent 40%, rgba(61,43,31,0.45) 100%)",
+                }}
+              />
+              <span className="absolute top-3.5 left-3.5 bg-cream text-terracotta text-[0.7rem] font-medium tracking-[0.12em] uppercase px-3 py-1 rounded-full">
                 {breed.origin}
               </span>
             </div>
 
-            {/* Content */}
-            <div style={{ padding: "1.4rem 1.5rem 1.6rem" }}>
-              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.25rem", fontWeight: 700, color: "#3d2b1f", marginBottom: "0.4rem" }}>
+            <div className="px-6 py-5">
+              <h2 className="font-serif text-xl font-bold text-brown mb-1.5">
                 {breed.name}
               </h2>
-              <p style={{ fontSize: "0.8rem", color: "#c97d4e", marginBottom: "0.6rem", fontWeight: 500 }}>
+              <p className="text-[0.8rem] text-terracotta mb-2 font-medium">
                 {breed.temperament?.split(",").slice(0, 3).join(" · ")}
               </p>
-              <p style={{ fontSize: "0.875rem", color: "#7a5c4a", lineHeight: 1.6, margin: 0, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+              <p className="text-sm text-brown-mid leading-relaxed m-0 line-clamp-2">
                 {breed.description}
               </p>
             </div>
