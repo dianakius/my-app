@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+const inputClass =
+  "w-full box-border px-4 py-3 rounded-xl border border-brown-border bg-cream text-sm font-sans text-brown outline-none";
+const labelClass =
+  "block text-[0.7rem] font-medium tracking-[0.12em] uppercase text-brown-mid mb-1.5";
+
 export default function Adoption() {
   const [form, setForm] = useState({
     name: "",
@@ -20,31 +25,12 @@ export default function Adoption() {
 
   if (submitted) {
     return (
-      <div
-        style={{
-          minHeight: "60vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          fontFamily: "'DM Sans', sans-serif",
-          padding: "2rem",
-          background: "#fdf8f2",
-        }}
-      >
-        <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🐱</div>
-        <h1
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "2.5rem",
-            color: "#3d2b1f",
-            marginBottom: "0.5rem",
-            fontWeight: 700,
-          }}
-        >
+      <div className="min-h-[60vh] flex flex-col items-center justify-center font-sans p-8 bg-cream">
+        <div className="text-5xl mb-4">🐱</div>
+        <h1 className="font-serif text-4xl font-bold text-brown mb-2">
           Request received!
         </h1>
-        <p style={{ color: "#7a5c4a", fontSize: "1rem", marginBottom: "2rem" }}>
+        <p className="text-brown-mid text-base mb-8">
           We'll be in touch with you at <strong>{form.email}</strong> soon.
         </p>
         <button
@@ -52,19 +38,13 @@ export default function Adoption() {
             setSubmitted(false);
             setForm({ name: "", email: "", subject: "", message: "" });
           }}
-          style={{
-            padding: "0.75rem 2rem",
-            borderRadius: "999px",
-            background: "#3d2b1f",
-            color: "#fdf8f2",
-            border: "none",
-            cursor: "pointer",
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.9rem",
-            fontWeight: 500,
+          className="px-8 py-3 rounded-full bg-brown text-cream font-sans text-sm font-medium cursor-pointer border-none transition-colors duration-200"
+          onMouseEnter={function (e) {
+            e.currentTarget.style.background = "#c97d4e";
           }}
-          onMouseEnter={function(e) { e.currentTarget.style.background = "#c97d4e"; }}
-          onMouseLeave={function(e) { e.currentTarget.style.background = "#3d2b1f"; }}
+          onMouseLeave={function (e) {
+            e.currentTarget.style.background = "#3d2b1f";
+          }}
         >
           Submit another request
         </button>
@@ -72,90 +52,28 @@ export default function Adoption() {
     );
   }
 
-  const inputStyle = {
-    width: "100%",
-    boxSizing: "border-box",
-    padding: "0.8rem 1.1rem",
-    borderRadius: "12px",
-    border: "1px solid #e8d8cc",
-    background: "#fdf8f2",
-    fontSize: "0.9rem",
-    fontFamily: "'DM Sans', sans-serif",
-    color: "#3d2b1f",
-    outline: "none",
-  };
-
-  const labelStyle = {
-    display: "block",
-    fontSize: "0.7rem",
-    fontWeight: 500,
-    letterSpacing: "0.12em",
-    textTransform: "uppercase",
-    color: "#7a5c4a",
-    marginBottom: "0.4rem",
-  };
-
   return (
-    <div
-      style={{
-        background: "#fdf8f2",
-        minHeight: "100%",
-        padding: "5rem 1.5rem",
-        fontFamily: "'DM Sans', sans-serif",
-      }}
-    >
-      {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <p
-          style={{
-            fontSize: "0.7rem",
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "#c97d4e",
-            marginBottom: "0.75rem",
-            fontWeight: 500,
-          }}
-        >
+    <div className="bg-cream min-h-full py-20 px-6 font-sans">
+      <div className="text-center mb-12">
+        <p className="text-[0.7rem] tracking-[0.18em] uppercase text-terracotta mb-3 font-medium">
           Give a cat a forever home
         </p>
         <h1
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-            fontWeight: 700,
-            color: "#3d2b1f",
-            lineHeight: 1.1,
-            margin: 0,
-          }}
+          className="font-serif font-bold text-brown leading-tight m-0"
+          style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)" }}
         >
-          Adopt a <em style={{ fontStyle: "italic", color: "#c97d4e" }}>Cat</em>
+          Adopt a <em className="italic text-terracotta">Cat</em>
         </h1>
       </div>
 
-      {/* Form card */}
       <form
         onSubmit={handleSubmit}
-        style={{
-          maxWidth: "580px",
-          margin: "0 auto",
-          background: "#fff",
-          borderRadius: "24px",
-          border: "1px solid #e8d8cc",
-          padding: "2.5rem",
-          boxShadow: "0 8px 40px rgba(61,43,31,0.08)",
-        }}
+        className="max-w-[580px] mx-auto bg-white rounded-3xl border border-brown-border p-10"
+        style={{ boxShadow: "0 8px 40px rgba(61,43,31,0.08)" }}
       >
-        {/* Name + Email side by side */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "1.25rem",
-            marginBottom: "1.25rem",
-          }}
-        >
+        <div className="grid grid-cols-2 gap-5 mb-5">
           <div>
-            <label style={labelStyle}>Name</label>
+            <label className={labelClass}>Name</label>
             <input
               type="text"
               name="name"
@@ -163,11 +81,11 @@ export default function Adoption() {
               onChange={handleChange}
               required
               placeholder="Your name"
-              style={inputStyle}
+              className={inputClass}
             />
           </div>
           <div>
-            <label style={labelStyle}>Email</label>
+            <label className={labelClass}>Email</label>
             <input
               type="email"
               name="email"
@@ -175,13 +93,13 @@ export default function Adoption() {
               onChange={handleChange}
               required
               placeholder="your@email.com"
-              style={inputStyle}
+              className={inputClass}
             />
           </div>
         </div>
 
-        <div style={{ marginBottom: "1.25rem" }}>
-          <label style={labelStyle}>Subject</label>
+        <div className="mb-5">
+          <label className={labelClass}>Subject</label>
           <input
             type="text"
             name="subject"
@@ -189,12 +107,12 @@ export default function Adoption() {
             onChange={handleChange}
             required
             placeholder="Which cat are you interested in?"
-            style={inputStyle}
+            className={inputClass}
           />
         </div>
 
-        <div style={{ marginBottom: "2rem" }}>
-          <label style={labelStyle}>Message</label>
+        <div className="mb-8">
+          <label className={labelClass}>Message</label>
           <textarea
             name="message"
             value={form.message}
@@ -202,41 +120,25 @@ export default function Adoption() {
             required
             placeholder="Tell us a bit about yourself and your home..."
             rows={6}
-            style={{ ...inputStyle, resize: "none" }}
+            className={`${inputClass} resize-none`}
           />
         </div>
 
-        {/* Divider */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "1rem",
-            marginBottom: "2rem",
-          }}
-        >
-          <div style={{ flex: 1, height: "1px", background: "#e8d8cc" }} />
-          <span style={{ color: "#c97d4e", fontSize: "1rem" }}>✦</span>
-          <div style={{ flex: 1, height: "1px", background: "#e8d8cc" }} />
+        <div className="flex items-center gap-4 mb-8">
+          <div className="flex-1 h-px bg-brown-border" />
+          <span className="text-terracotta">✦</span>
+          <div className="flex-1 h-px bg-brown-border" />
         </div>
 
         <button
           type="submit"
-          style={{
-            width: "100%",
-            padding: "0.9rem",
-            borderRadius: "999px",
-            background: "#3d2b1f",
-            color: "#fdf8f2",
-            border: "none",
-            fontSize: "0.95rem",
-            fontWeight: 500,
-            cursor: "pointer",
-            fontFamily: "'DM Sans', sans-serif",
-            letterSpacing: "0.03em",
+          className="w-full py-3.5 rounded-full bg-brown text-cream border-none text-base font-medium cursor-pointer font-sans tracking-wide transition-colors duration-200"
+          onMouseEnter={function (e) {
+            e.currentTarget.style.background = "#c97d4e";
           }}
-          onMouseEnter={function(e) { e.currentTarget.style.background = "#c97d4e"; }}
-          onMouseLeave={function(e) { e.currentTarget.style.background = "#3d2b1f"; }}
+          onMouseLeave={function (e) {
+            e.currentTarget.style.background = "#3d2b1f";
+          }}
         >
           Submit Request →
         </button>
