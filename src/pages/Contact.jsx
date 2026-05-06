@@ -39,7 +39,7 @@ export default function Contact() {
   return (
     <div className="bg-cream min-h-full py-20 px-6 font-sans">
 
-      {/* Header */}
+     
       <div className="text-center mb-12">
         <p className="text-[0.7rem] tracking-[0.18em] uppercase text-terracotta mb-3 font-medium">
           We'd love to hear from you
@@ -49,13 +49,13 @@ export default function Contact() {
         </h1>
       </div>
 
-      {/* Form card */}
+      
       <form
         onSubmit={handleSubmit}
         className="max-w-[580px] mx-auto bg-white rounded-3xl border border-brown-border p-10"
         style={{ boxShadow: "0 8px 40px rgba(61,43,31,0.08)" }}
       >
-        {/* Name + Email */}
+        
         <div className="grid grid-cols-2 gap-5 mb-5">
           <div>
             <label className={labelClass}>Name</label>
@@ -77,7 +77,7 @@ export default function Contact() {
           <textarea name="message" value={form.message} onChange={handleChange} required placeholder="Write your message here..." rows={6} className={`${inputClass} resize-none`} />
         </div>
 
-        {/* Divider */}
+        
         <div className="flex items-center gap-4 mb-8">
           <div className="flex-1 h-px bg-brown-border" />
           <span className="text-terracotta">✦</span>
