@@ -7,27 +7,24 @@ import Footer from "./components/Footer";
 import "./App.css";
 import Contact from "./pages/Contact";
 import Adoption from "./pages/Adoption";
-
 import BreedsPage from "./pages/BreedsPage";
 
 function App() {
   return (
-    
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/adoption" element={<Adoption />} />
-            <Route path="/cats" element={<CatListPage />} />
-            <Route path="/cats/:id" element={<CatDetailsPage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/breeds" element={<BreedsPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-  
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="grow">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/adoption" element={<Adoption />} />
+          <Route path="/cats" element={<CatListPage />} />
+          <Route path="/cats/:id" element={<CatDetailsPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/breeds" element={<BreedsPage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
