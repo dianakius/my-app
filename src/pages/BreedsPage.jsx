@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_CAT_BASE_URL;
+
 export default function BreedsPage() {
   const [breeds, setBreeds] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://api.thecatapi.com/v1/breeds")
+    fetch(`${BASE_URL}/breeds`)
       .then((res) => res.json())
       .then((data) => {
         setBreeds(data);
