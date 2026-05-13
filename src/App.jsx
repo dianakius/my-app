@@ -8,6 +8,7 @@ import "./App.css";
 import Contact from "./pages/Contact";
 import Adoption from "./pages/Adoption";
 import BreedsPage from "./pages/BreedsPage";
+import HowItWorks from "./pages/HowItWorks";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/cats/:id" element={<CatDetailsPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/breeds" element={<BreedsPage />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
         </Routes>
       </main>
       <Footer />
