@@ -12,7 +12,7 @@ const footerLinks = [
   {
     heading: "About Us",
     items: [
-      { label: "How it works", to: "/signup" },
+      { label: "How it works", to: "/how-it-works" },
       { label: "Testimonials", to: "/" },
     ],
   },
