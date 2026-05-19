@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 const links = [
   { to: "/", label: "Home" },
@@ -9,45 +10,106 @@ const links = [
 
 export default function Navbar() {
   const { pathname } = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-cream border-b border-brown-border px-8 flex items-center justify-between h-16 font-sans sticky top-0 z-50">
-
-      <Link to="/" className="font-serif text-[1.3rem] font-bold text-brown no-underline tracking-tight">
-        Cat World <span className="text-terracotta">✦</span>
-      </Link>
-
-      <div className="flex gap-8 items-center">
-        {links.map(({ to, label }) => {
-          const active = pathname === to;
-          return (
-            <Link
-              key={to}
-              to={to}
-              className="text-sm no-underline tracking-wide transition-colors duration-200"
-              style={{
-                fontWeight: active ? 500 : 400,
-                color: active ? "#c97d4e" : "#7a5c4a",
-                borderBottom: active ? "1.5px solid #c97d4e" : "1.5px solid transparent",
-                paddingBottom: "2px",
-              }}
-              onMouseEnter={(e) => { if (!active) e.currentTarget.style.color = "#3d2b1f"; }}
-              onMouseLeave={(e) => { if (!active) e.currentTarget.style.color = "#7a5c4a"; }}
-            >
-              {label}
-            </Link>
-          );
-        })}
-
+    <nav className="bg-cream border-b border-brown-border font-sans sticky top-0 z-50">
+      <div className="px-8 flex items-center justify-between h-16">
         <Link
-          to="/adoption"
-          className="text-[0.8rem] font-medium text-cream bg-terracotta px-5 py-2 rounded-full no-underline tracking-wide transition-colors duration-200"
-          onMouseEnter={(e) => (e.currentTarget.style.background = "#3d2b1f")}
-          onMouseLeave={(e) => (e.currentTarget.style.background = "#c97d4e")}
+          to="/"
+          className="font-serif text-[1.3rem] font-bold text-brown no-underline tracking-tight"
         >
-          Adopt Now
+          Cat World <span className="text-terracotta">✦</span>
         </Link>
+
+        <div className="hidden md:flex gap-8 items-center">
+          {links.map(({ to, label }) => {
+            const active = pathname === to;
+            return (
+              <Link
+                key={to}
+                to={to}
+                className="text-sm no-underline tracking-wide transition-colors duration-200"
+                style={{
+                  fontWeight: active ? 500 : 400,
+                  color: active ? "#c97d4e" : "#7a5c4a",
+                  borderBottom: active
+                    ? "1.5px solid #c97d4e"
+                    : "1.5px solid transparent",
+                  paddingBottom: "2px",
+                }}
+                onMouseEnter={(e) => {
+                  if (!active) e.currentTarget.style.color = "#3d2b1f";
+                }}
+                onMouseLeave={(e) => {
+                  if (!active) e.currentTarget.style.color = "#7a5c4a";
+                }}
+              >
+                {label}
+              </Link>
+            );
+          })}
+
+          <Link
+            to="/adoption"
+            className="text-[0.8rem] font-medium text-cream bg-terracotta px-5 py-2 rounded-full no-underline tracking-wide transition-colors duration-200"
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#3d2b1f")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#c97d4e")}
+          >
+            Adopt Now
+          </Link>
+        </div>
+
+        <button
+          className="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-none p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span
+            className="block w-6 h-0.5 bg-brown transition-all duration-300"
+            style={{
+              transform: menuOpen ? "translateY(8px) rotate(45deg)" : "none",
+            }}
+          />
+          <span
+            className="block w-6 h-0.5 bg-brown transition-all duration-300"
+            style={{ opacity: menuOpen ? 0 : 1 }}
+          />
+          <span
+            className="block w-6 h-0.5 bg-brown transition-all duration-300"
+            style={{
+              transform: menuOpen ? "translateY(-8px) rotate(-45deg)" : "none",
+            }}
+          />
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="md:hidden border-t border-brown-border bg-cream px-8 py-6 flex flex-col gap-5">
+          {links.map(({ to, label }) => {
+            const active = pathname === to;
+            return (
+              <Link
+                key={to}
+                to={to}
+                onClick={() => setMenuOpen(false)}
+                className="text-sm no-underline tracking-wide font-medium"
+                style={{ color: active ? "#c97d4e" : "#7a5c4a" }}
+              >
+                {label}
+              </Link>
+            );
+          })}
+
+          <Link
+            to="/adoption"
+            onClick={() => setMenuOpen(false)}
+            className="text-[0.8rem] font-medium text-cream bg-terracotta px-5 py-2 rounded-full no-underline tracking-wide text-center transition-colors duration-200"
+          >
+            Adopt Now
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
