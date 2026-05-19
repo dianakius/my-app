@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Adoption from "./pages/Adoption";
 import BreedsPage from "./pages/BreedsPage";
 import HowItWorks from "./pages/HowItWorks";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -23,11 +24,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/breeds" element={<BreedsPage />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
     </div>
-  );
+  );S
 }
 
 export default App;
